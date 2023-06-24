@@ -8,7 +8,7 @@ image: /assets/images/socks-feet-pose-in-geometric.jpg
 categories:
     - clothes
     - socks
-layout: ../../layouts/StandardProductLayout.astro
+layout: ../layouts/StandardProductLayout.astro
 ---
 
 These brightly patterned socks are a fun way to liven up your wardrobe. They are made of soft cotton but designed to last.

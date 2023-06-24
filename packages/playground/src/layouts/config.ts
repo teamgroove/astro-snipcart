@@ -1,6 +1,7 @@
 import { PageLink } from '@lloydjatkinson/astro-snipcart-design-system';
 
 export const headerPageLinks: PageLink[] = [
+    { label: 'Gaga', to: '/gaga' },
     { label: 'Products', to: '/products' },
     { label: 'Sales', to: '/sales' },
     { label: 'About', to: '/About' },

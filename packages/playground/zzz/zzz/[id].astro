@@ -19,7 +19,7 @@ const Content = (await import ('../../../products/' + id + '.md')).default;
 const {
     name,
     price,
-    description,
+ 
     image,
     categories,
     metadata,
@@ -37,6 +37,7 @@ const {
 } = product;
 ---
 <PlaygroundLayout>
-    <ProductPage { ...product } content={Content}>
+
+    <ProductPage { ...product} content={ Content }>
     </ProductPage>
 </PlaygroundLayout>

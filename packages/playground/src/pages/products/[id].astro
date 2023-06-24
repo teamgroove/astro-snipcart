@@ -1,0 +1,64 @@
+---
+import { SnipcartProduct, ProductMeta } from '@lloydjatkinson/astro-snipcart';
+import { ProductPage, ProductPageWithSizePicker } from '@lloydjatkinson/astro-snipcart-design-system/astro';
+
+import PlaygroundLayout from '../../layouts/PlaygroundLayout.astro';
+
+export async function getStaticPaths() {
+    const productIds = (await Astro.glob<SnipcartProduct>('../../products/*.md'))
+        .map(product => ({ params: { id: product.frontmatter.id } }));
+    return productIds;
+};
+console.log("hey")
+const { id } = Astro.params;
+const products = await Astro.glob<SnipcartProduct & ProductMeta>('../../products/*.md');
+
+
+    
+const product = products.find((product) => product.frontmatter.id === id).frontmatter;
+// fix this bug: object possibly undefined
+const Content = (await import ('../../products/' + id + '.md')).default;
+
+const {
+    name,
+    price,
+ artist,
+    image,
+    categories,
+    metadata,
+    quantity,
+    minimumQuantity,
+    maximumQuantity,
+    quantityStep,
+    dimensions,
+    customFields,
+    stackable,
+    shippable,
+    taxable,
+    taxes,
+    hasTaxesIncluded,
+    variations
+} = product;
+
+const productone: SnipcartProduct & ProductMeta  = {
+    id: 'plain-tshirt',
+    name: 'Plain T-Shirt',
+    description: 'A plain t-shirt that is soft and warm',
+    image: '/assets/images/t-shirt-light-green.jpg',
+    price: 10,
+    originalPrice: 15,
+    currency: 'GBP',
+    variants: ['gaga[10]','gugu'],
+    sizes: [ 'XS', 'S', 'M', 'L', 'XL', 'XXL' ],
+}
+
+---
+<PlaygroundLayout>
+    <ProductPageWithSizePicker
+    { ...productone }>
+    yo Product description can go here. When using Markdown files with Astro, this default slot will contain the formatted and styled markdown.
+    Or, you can put anything you'd like when using the component.
+</ProductPageWithSizePicker>
+    <!-- <ProductPage { ...product} content={ Content }>
+    </ProductPage> -->
+</PlaygroundLayout>

@@ -6,7 +6,7 @@ import Text from './Text.astro';
 import Link from './Link.astro';
 import Stack from './Stack.astro';
 import ExperimentalStack from './ExperimentalStack.astro';
-
+import { Img } from "astro-imagetools/components";
 import { Element, ProductCard } from './types';
 
 // export type Props = Element & {
@@ -27,7 +27,7 @@ const alternativeText = `${ name } - ${ description }`;
 <Element>
     <div class="relative">
         <div class="w-full min-h-80 aspect-square overflow-hidden lg:h-80">
-            <img src={ image } alt={ alternativeText } class="w-full h-full object-center object-cover lg:w-full lg:h-full">
+          <Img src={ image } alt={ alternativeText } class="w-full h-full object-center object-cover lg:w-full lg:h-full">
         </div>
         <div class="mt-4">
             <ExperimentalStack
@@ -47,11 +47,11 @@ const alternativeText = `${ name } - ${ description }`;
                             { name }
                         </Link>
                     </Text>
-                    <Text
+                    <!-- <Text
                         size="small"
                         tone="passive">
                         { variants?.join(', ') }
-                    </Text>
+                    </Text> -->
                 </div>
                 <Price
                     price={ price }

@@ -16,7 +16,7 @@ relatedProductIds:
     - t-shirt-blue
     - vibrant-geometric-ankle-socks
     - classic-white-ankle-socks
-layout: ../../layouts/StandardProductLayout.astro
+layout: ../layouts/StandardProductLayout.astro
 ---
 
 Sleepy cat ankle socks are a fun way to liven up your wardrobe. They are made of soft cotton but designed to last.

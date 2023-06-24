@@ -62,6 +62,7 @@ export type SnipcartProductStackable = 'auto' | 'never' | 'always';
 export interface SnipcartProduct {
     readonly id: string;
     readonly name: string;
+    readonly artist: string;
     readonly price: Currency;
     readonly url?: string | URL;
     readonly description?: string;

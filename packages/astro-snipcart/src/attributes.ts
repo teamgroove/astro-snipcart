@@ -62,6 +62,7 @@ export const buildCustomFieldAttributes = (customFields: readonly SnipcartProduc
 export const buildAttributes = (snipcartProduct: SnipcartProduct) => {
     const {
         id,
+        artist,
         name,
         price,
         url,

@@ -1,9 +1,10 @@
 ---
 import { SnipcartProduct, ProductMeta, SnipcartProductWithProductMeta } from '@lloydjatkinson/astro-snipcart';
 import { Product } from '@lloydjatkinson/astro-snipcart/astro';
+import Stack from './Stack.astro';
 
 import ProductWithSizePicker from './ProductWithSizePicker.astro';
-
+import { Img } from "astro-imagetools/components";
 import Text from './Text.astro';
 import PageLayout from './PageLayout.astro';
 import Price from './Price.astro';
@@ -15,14 +16,34 @@ export type Props = SnipcartProductWithProductMeta & {
     readonly relatedProducts?: readonly SnipcartProductWithProductMeta[];
 };
 
-const { id, name, description, image, price, originalPrice, currency, relatedProducts, sizes = [] } = Astro.props as Props;
+const { id, artist, name, description, image, price, originalPrice, currency, relatedProducts, sizes = [], variants = [], additionalImages=[] } = Astro.props as Props;
 const product = Astro.props as SnipcartProduct & ProductMeta;
+const myadditionalImages = additionalImages.map(image => ({
+    ...image,
+    path: `https://nocodb.canvasart.design/${image.path}`
+  }))
 ---
 <div>
     <section class="grid grid-cols-1 sm:grid-cols-2 gap-10">
         <div>
-            <img class="mt-1.5" src={ image }>
+            <Img alt="" class="mt-1.5" src={ image }>
         </div>
+        <Stack
+        direction="horizontal"
+        wrap="wrap"
+        gap={{
+            mobile: 'small',
+            tablet: 'small',
+            desktop: 'small'
+        }}>
+        {
+            myadditionalImages && myadditionalImages.map((element) => (
+            <div class="border border-black px-4 py-2 flex flex-1 items-center justify-center cursor-pointer outline-none ring-0">   
+            <Img src={ element.path } alt=""/>                      
+            </div> 
+            ))
+        }
+        </Stack>
         <div>
             <div class="space-y-4">
                 <div class="space-y-2">

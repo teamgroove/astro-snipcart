@@ -9,15 +9,15 @@ import {
 } from '@lloydjatkinson/astro-snipcart-design-system/astro';
 import { ProductMeta, SnipcartProduct } from '@lloydjatkinson/astro-snipcart';
 
-import { headerPageLinks, footerPageLinks } from '../layouts/config';
+import { headerPageLinks, footerPageLinks } from '../../layouts/config';
 
 const products =
-	(await Astro.glob<SnipcartProduct & ProductMeta>('../products/*.md'))
+	(await Astro.glob<SnipcartProduct & ProductMeta>('../../pages/products/*.md'))
 	.map((markdownProduct) => ({ ...markdownProduct.frontmatter }));
 
 // sort products by cheapest first
 const sortedProducts = [...products].sort((a, b) => a.price - b.price);
-console.log('sorted', JSON.stringify(sortedProducts))
+
 const welcome = "A real world demo of the Astro Snipcart Design System for the Astro Snipcart E-commerce integration!";
 ---
 <StorePageLayout
@@ -32,11 +32,8 @@ const welcome = "A real world demo of the Astro Snipcart Design System for the A
 	<Storefront
 		title="Astro Snipcart Integration"
 		description="Demo store for Astro and Snipcart"
-		heroHeading="The here and now"
-		heroSubHeading={ welcome }
-		heroImage="/assets/images/t-shirts-on-hangers.jpg"
-		products={ sortedProducts }>
-		<Stack
+			products={ sortedProducts }>
+		<!-- <Stack
 			direction="vertical"
 			gap={{
 				mobile: 'large'
@@ -76,6 +73,6 @@ const welcome = "A real world demo of the Astro Snipcart Design System for the A
 					Made with ♥ by @lloydjatkinson
 				</Text>
 			</Link>
-		</Stack>
+		</Stack> -->
 	</Storefront>
 </StorePageLayout>

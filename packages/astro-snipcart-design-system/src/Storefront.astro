@@ -23,17 +23,18 @@ const {
 } = Astro.props as Props;
 ---
 <Stack>
-    <Hero
+    <!-- <Hero
         heading={ heroHeading }
         subHeading={ heroSubHeading }
         image={ heroImage }>
         <slot />
-    </Hero>
+    </Hero> -->
+
     <ProductGrid>
         {
             products.map((product) => (
                 <ProductCard
-                    currency="GBP"
+                    currency="EUR"
                     { ...product } />
             ))
         }

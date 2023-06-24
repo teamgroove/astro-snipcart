@@ -16,7 +16,7 @@ relatedProductIds:
     - t-shirt-blue
     - sleepy-kitties-ankle-socks
     - vibrant-geometric-ankle-socks
-layout: ../../layouts/StandardProductLayout.astro
+layout: ../layouts/StandardProductLayout.astro
 ---
 
 Classic white ankle socks are an essential item for your wardrobe. They are made of soft cotton but designed to last.

@@ -1,0 +1,204 @@
+[
+    {
+        "frontmatter": {
+            "id": "classic-white-ankle-socks",
+            "name": "Classic white Ankle Socks",
+            "decscription": "Soft and comfortable ankle socks with a classic white design.",
+            "price": 6,
+            "originalPrice": 8,
+            "currency": "GBP",
+            "image": "/assets/images/socks-feet-pose-white-sport-sock.jpg",
+            "variants": [
+                "apple",
+                "banana"
+            ],
+            "categories": [
+                "socks",
+                "cats"
+            ],
+            "relatedProductIds": [
+                "t-shirt-blue",
+                "sleepy-kitties-ankle-socks",
+                "vibrant-geometric-ankle-socks"
+            ],
+            "layout": "../../layouts/StandardProductLayout.astro"
+        },
+        "file": "/home/rsx/gits/astro-snipcart/packages/playground/src/pages/products/classic-white-ankle-socks.md",
+        "url": "/products/classic-white-ankle-socks"
+    },
+    {
+        "frontmatter": {
+            "id": "sleepy-kitties-ankle-socks",
+            "name": "Sleepy Kitties Ankle Socks",
+            "description": "Soft and comfortable ankle socks with stripes and a cute cat design.",
+            "price": 6,
+            "originalPrice": 8,
+            "currency": "GBP",
+            "image": "/assets/images/socks-feet-pose-in-cat.jpg",
+            "variants": [
+                "apple",
+                "banana"
+            ],
+            "categories": [
+                "socks",
+                "cats"
+            ],
+            "relatedProductIds": [
+                "t-shirt-blue",
+                "vibrant-geometric-ankle-socks",
+                "classic-white-ankle-socks"
+            ],
+            "layout": "../../layouts/StandardProductLayout.astro"
+        },
+        "file": "/home/rsx/gits/astro-snipcart/packages/playground/src/pages/products/sleepy-kitties-ankle-socks.md",
+        "url": "/products/sleepy-kitties-ankle-socks"
+    },
+    {
+        "frontmatter": {
+            "id": "t-shirt-blue",
+            "name": "T-Shirt (Blue)",
+            "decscription": "Tri-blend T-Shirt designed for softness and comfort",
+            "price": 18,
+            "currency": "GBP",
+            "image": "/assets/images/t-shirt-blue.jpg",
+            "categories": [
+                "clothes",
+                "t-shirt"
+            ],
+            "sizes": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ],
+            "layout": "../../layouts/SizePickerProductLayout.astro"
+        },
+        "file": "/home/rsx/gits/astro-snipcart/packages/playground/src/pages/products/t-shirt-blue.md",
+        "url": "/products/t-shirt-blue"
+    },
+    {
+        "frontmatter": {
+            "id": "t-shirt-green",
+            "name": "T-Shirt (Green)",
+            "decscription": "Tri-blend T-Shirt designed for softness and comfort",
+            "price": 18.5,
+            "currency": "GBP",
+            "image": "/assets/images/t-shirt-green.jpg",
+            "categories": [
+                "clothes",
+                "t-shirt"
+            ],
+            "sizes": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ],
+            "layout": "../../layouts/SizePickerProductLayout.astro"
+        },
+        "file": "/home/rsx/gits/astro-snipcart/packages/playground/src/pages/products/t-shirt-green.md",
+        "url": "/products/t-shirt-green"
+    },
+    {
+        "frontmatter": {
+            "id": "t-shirt-light-green",
+            "name": "T-Shirt (Light Green)",
+            "decscription": "Tri-blend T-Shirt designed for softness and comfort",
+            "price": 18,
+            "currency": "GBP",
+            "image": "/assets/images/t-shirt-light-green.jpg",
+            "categories": [
+                "clothes",
+                "t-shirt"
+            ],
+            "sizes": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ],
+            "layout": "../../layouts/SizePickerProductLayout.astro"
+        },
+        "file": "/home/rsx/gits/astro-snipcart/packages/playground/src/pages/products/t-shirt-light-green.md",
+        "url": "/products/t-shirt-light-green"
+    },
+    {
+        "frontmatter": {
+            "id": "t-shirt-purple",
+            "name": "T-Shirt (Purple)",
+            "image": "/assets/images/t-shirt-purple.jpg",
+            "price": 18,
+            "currency": "GBP",
+            "decscription": "Tri-blend T-Shirt designed for softness and comfort",
+            "categories": [
+                "clothes",
+                "t-shirt"
+            ],
+            "sizes": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ],
+            "layout": "../../layouts/SizePickerProductLayout.astro"
+        },
+        "file": "/home/rsx/gits/astro-snipcart/packages/playground/src/pages/products/t-shirt-purple.md",
+        "url": "/products/t-shirt-purple"
+    },
+    {
+        "frontmatter": {
+            "id": "t-shirt-red",
+            "name": "T-Shirt (Red)",
+            "decscription": "Tri-blend T-Shirt designed for softness and comfort",
+            "price": 18,
+            "currency": "GBP",
+            "image": "/assets/images/t-shirt-red.jpg",
+            "categories": [
+                "clothes",
+                "t-shirt"
+            ],
+            "sizes": [
+                "XS",
+                "S",
+                "M",
+                "L",
+                "XL",
+                "XXL",
+                "XXXL"
+            ],
+            "layout": "../../layouts/SizePickerProductLayout.astro"
+        },
+        "file": "/home/rsx/gits/astro-snipcart/packages/playground/src/pages/products/t-shirt-red.md",
+        "url": "/products/t-shirt-red"
+    },
+    {
+        "frontmatter": {
+            "id": "vibrant-geometric-ankle-socks",
+            "name": "Vibrant Geometric Ankle Socks",
+            "description": "Soft and comfortable ankle socks with standout design.",
+            "price": 8,
+            "currency": "GBP",
+            "image": "/assets/images/socks-feet-pose-in-geometric.jpg",
+            "categories": [
+                "clothes",
+                "socks"
+            ],
+            "layout": "../../layouts/StandardProductLayout.astro"
+        },
+        "file": "/home/rsx/gits/astro-snipcart/packages/playground/src/pages/products/vibrant-geometric-ankle-socks.md",
+        "url": "/products/vibrant-geometric-ankle-socks"
+    }
+]
+Ask AI to edit or generate...

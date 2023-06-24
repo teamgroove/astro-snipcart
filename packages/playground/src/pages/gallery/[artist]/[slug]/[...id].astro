@@ -1,0 +1,111 @@
+---
+import { ProductGrid, StorePageLayout } from '@lloydjatkinson/astro-snipcart-design-system/astro';
+import { SnipcartProduct, ProductMeta } from '@lloydjatkinson/astro-snipcart';
+import { ProductPage, ProductPageWithSizePicker } from '@lloydjatkinson/astro-snipcart-design-system/astro';
+import { headerPageLinks, footerPageLinks } from '../../../../layouts/config';
+import slugify from 'slugify';
+import PlaygroundLayout from '../../../../layouts/PlaygroundLayout.astro';
+
+// const dev = await response.json();
+const {artist, slug, id } = Astro.params;
+export async function getStaticPaths() {
+    const response = await fetch(`https://nocodb.canvasart.design/api/v1/db/data/noco/p_ivr9itv9io0egh/products/views/products?offset=0&limit=25&where=`, {
+    headers: {
+        "xc-token":"74rlimcwGb9qamk8Y_R8u76tsD4fYW-2-wAj4MnF"
+    }
+
+    });
+    const data = await response.json();
+    const products = data.list;
+
+    const paths = products.map((product) => ({
+        params: { artist: product.artist.name+'', id: product.Id+'', slug: slugify(product.name+'',{ lower: true})},
+    }));
+
+    console.log(JSON.stringify(paths))
+
+    return paths
+    
+}
+
+
+
+// const response2 = await fetch(`https://undb.canvasart.design/api/v1/openapi/tables/tblbcnlznji/records/${id}`, {
+//     headers: {
+//         "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVuZGItYWRtaW5AdGVhbWdyb292ZSIsInN1YiI6InVzcjVsZGNndmN6IiwiaWF0IjoxNjg3MzY0OTE3LCJleHAiOjE2ODkwOTI5MTd9.CH5kxCzipIZPiIppNJCK0iU9ykBXKQHVrzGFUfAeKRM"
+//     }
+
+//     });
+// const mydata = await response2.json();
+
+// const product = fetch(`https://undb.canvasart.design/api/v1/openapi/tables/tblbcnlznji/records/${id}`, {
+//     headers: {
+//         "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVuZGItYWRtaW5AdGVhbWdyb292ZSIsInN1YiI6InVzcjVsZGNndmN6IiwiaWF0IjoxNjg3MzY0OTE3LCJleHAiOjE2ODkwOTI5MTd9.CH5kxCzipIZPiIppNJCK0iU9ykBXKQHVrzGFUfAeKRM"
+//     }
+
+//     });
+// const mydata = await product.json();
+const options = {
+  method: 'GET',
+  headers: {
+    'xc-token': '74rlimcwGb9qamk8Y_R8u76tsD4fYW-2-wAj4MnF'
+  }
+
+};
+
+const response2 = await fetch(`https://nocodb.canvasart.design/api/v1/db/data/v1/basic_chickadee/products/${id}`, options)
+const product = await response2.json(); 
+
+console.log('hello', JSON.stringify(product))
+product.sizes = product.sizes.map(size => size.Title);
+product.id = product.id+'';
+product.artist = product.artist.name.replace('"','');
+
+product.image = `https://nocodb.canvasart.design/${product.image[0].path}`
+
+// const newproduct =
+const {
+    id: Id,
+    name,
+    description,
+    price,
+    image,
+    currency,
+    sizes,
+}: SnipcartProduct & ProductMeta = product;
+
+
+
+const productone: SnipcartProduct & ProductMeta  = {
+    id: 'plain-tshirt',
+    name: 'Plain T-Shirt',
+    description: 'A plain t-shirt that is soft and warm',
+    image: '/assets/images/t-shirt-light-green.jpg',
+    price: 10,
+    originalPrice: 15,
+    currency: 'GBP',
+    sizes: [ 'XS', 'S', 'M', 'L', 'XL', 'XXL' ],
+}
+
+---
+<StorePageLayout
+	title="Astro Snipcart by @lloydjatkinson"
+	description=""
+	headerLinks={ headerPageLinks }
+    footerLinks={ footerPageLinks }
+	storeName="canvasarts"
+    useDefaultLogo="hexagon"
+	image="/assets/images/t-shirts-on-hangers.jpg">
+
+    <ProductPageWithSizePicker
+        { ...product }>
+YO:{product.artist}
+      
+        { JSON.stringify(product) }
+        yo Product description can go here. When using Markdown files with Astro, this default slot will contain the formatted and styled markdown.
+        Or, you can put anything you'd like when using the component.
+    </ProductPageWithSizePicker>
+<!--     
+    <ProductPage { ...merge  } content={Content}>
+    </ProductPage> -->
+</StorePageLayout>

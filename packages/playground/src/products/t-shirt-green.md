@@ -1,10 +1,10 @@
 ---
-id: t-shirt-light-green
-name: T-Shirt (Light Green)
+id: t-shirt-green
+name: T-Shirt (Green)
 decscription: Tri-blend T-Shirt designed for softness and comfort
-price: 18.00
+price: 18.50
 currency: GBP
-image: /assets/images/t-shirt-light-green.jpg
+image: /assets/images/t-shirt-green.jpg
 categories:
     - clothes
     - t-shirt
@@ -16,7 +16,7 @@ sizes:
     - XL
     - XXL
     - XXXL
-layout: ../../layouts/SizePickerProductLayout.astro
+layout: ../layouts/SizePickerProductLayout.astro
 ---
 
 A tri-blend t-shirt designed for softness and comfort. Tri-blend is a fabric made up of three different materials: cotton, polyester, and rayon. The cotton material is soft and breathable, while the polyester and rayon materials are lightweight and durable.

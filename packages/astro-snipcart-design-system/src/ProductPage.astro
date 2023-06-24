@@ -6,12 +6,12 @@ import Text from './Text.astro';
 import PageLayout from './PageLayout.astro';
 import Price from './Price.astro';
 import Stack from './Stack.astro';
-import RelatedProducts from './RelatedProducts.astro';
+// import RelatedProducts from './RelatedProducts.astro';
 import Button from './Button.astro';
 
-export type Props = SnipcartProductWithProductMeta & {
-    readonly relatedProducts?: readonly SnipcartProductWithProductMeta[];
-};
+// export type Props = SnipcartProductWithProductMeta & {
+//     readonly relatedProducts?: readonly SnipcartProductWithProductMeta[];
+// };
 
 const { id, name, description, image, price, originalPrice, currency, relatedProducts } = Astro.props as Props;
 const product = Astro.props as SnipcartProduct & ProductMeta;
@@ -51,8 +51,8 @@ const product = Astro.props as SnipcartProduct & ProductMeta;
         </div>
     </section>
     <section>
-        <RelatedProducts
+        <!-- <RelatedProducts
             products={ relatedProducts }
-            currency={ currency } />
+            currency={ currency } /> -->
     </section>
 </div>
